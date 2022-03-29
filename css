@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Fredoka:wght@400;500;600&family=Lato:wght@300&family=Palette+Mosaic&family=Quintessential&family=Roboto:ital,wght@1,300&display=swap');
+
+body{
+    font-family:'Quintessential', cursive;;
+    background-color: rgb(217, 225, 228);
+    background: linear-gradient(to bottom,  rgb(223, 215, 224) 0%, rgb(242, 238, 247) 50%, rgb(110, 123, 240)50%, rgb(110, 123, 240)100%);
+    display: flex;
+ margin: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+nav{
+    background-color: white;
+    padding: 20px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgb(0,0,0, 0.3);
+    transition: width 0.2s linear;
+}
+nav.active{
+    width: 350px;
+}
+nav ul{
+    display:flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 0;  
+}
+nav.active ul{
+    width: 90%;
+
+}
+ nav ul li{
+    transform: rotateY(0deg);
+    opacity: 0;
+    transition: transform 0.2s linear, opacity 0 linear;
+} 
+nav.active ul li {
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+nav ul a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.icon {
+    background-color: white;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    height: 30px;
+    width: 30px;
+}
+.icon:focus{
+    outline: 0;
+}
+.icon .line{
+    background-color: blue;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: transform 0.2s linear;
+
+}
+.icon .line2{
+    top: auto;
+    bottom: 11px;
+}
+nav.active .icon .line1{
+    transform: rotate(-43deg) translateY(7.8px);
+}
+nav.active .icon .line2{
+    transform: rotate(43deg) translateY(-7.8px);
+}
